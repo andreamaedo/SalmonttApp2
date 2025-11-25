@@ -4,6 +4,7 @@ Duoc UC A Actividad Sumativa 2: Organización modular y creación de una librer�
 
 🧱 Estructura general del proyecto 📁 src/ ├── ui/ # Clase principal con el método main ├── model/ # Clases de dominio (Centros de cultivo) ├── data/ # Gestor de datos ├── resources/ # Archivo texto .txt
 
+https://github.com/andreamaedo/SalmonttApp2.git
 
 Fecha de entrega: [24/11/2025]
 
