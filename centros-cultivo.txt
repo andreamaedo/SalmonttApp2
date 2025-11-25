@@ -1,0 +1,3 @@
+Aysén Principal;Puerto Aysén;2500
+Isla Dawson;Punta Arenas;1800
+Melinka Oeste; Guaitecas;3100
