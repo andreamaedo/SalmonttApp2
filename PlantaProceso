@@ -1,0 +1,34 @@
+package model;
+
+/**
+ * Clase que representa una Planta de Proceso de salmón.
+ * Hereda de UnidadOperativa.
+ */
+public class PlantaProceso extends UnidadOperativa {
+    private int capacidadProceso; // Atributo específico
+
+    public int getCapacidadProceso() {
+        return capacidadProceso;
+    }
+
+    /**
+     * Constructor de PlantaProceso.
+     */
+    public PlantaProceso(String nombre, String comuna, int capacidadProceso) {
+        super(nombre, comuna); // Llama al constructor de UnidadOperativa
+
+        if (capacidadProceso <= 0) {
+            throw new IllegalArgumentException("La capacidad de proceso debe ser positiva.");
+        }
+
+        this.capacidadProceso = capacidadProceso;
+    }
+
+    /**
+     * Retorna una representación legible del objeto.
+     */
+    @Override
+    public String toString() {
+        return String.format("| %-30s | %-15s | %,15d tons |", nombre, comuna, capacidadProceso);
+    }
+}
