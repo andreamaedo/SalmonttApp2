@@ -15,7 +15,7 @@ public class PlantaProceso extends UnidadOperativa {
      * Constructor de PlantaProceso.
      */
     public PlantaProceso(String nombre, String comuna, int capacidadProceso) {
-        super(nombre, comuna); // Llama al constructor de UnidadOperativa
+        super(nombre, comuna);
 
         if (capacidadProceso <= 0) {
             throw new IllegalArgumentException("La capacidad de proceso debe ser positiva.");
@@ -25,10 +25,10 @@ public class PlantaProceso extends UnidadOperativa {
     }
 
     /**
-     * Retorna una representación legible del objeto.
+     * Retorna una representación legible del objeto (Implementación polimórfica).
      */
     @Override
-    public String toString() {
-        return String.format("| %-30s | %-15s | %,15d tons |", nombre, comuna, capacidadProceso);
+    public void mostrarInformacion() {
+        System.out.printf("| %-30s | %-15s | %,15d tons |\n", nombre, comuna, capacidadProceso);
     }
 }
