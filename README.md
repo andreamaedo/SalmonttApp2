@@ -1,10 +1,9 @@
-Duoc UC Actividad Formativa 4: Creación de jerarquías de clases con herencia simple
-
-👤 Autor del proyecto Nombre completo: [Andrea Angélica Mena Aedo] Sección: [002A] Carrera: ANALISTA PROGRAMADOR COMPUTACIONAL Sede: [Online] 📘 Descripción general del sistema Este proyecto corresponde a la Actividad Formativa 4: Creación de jerarquías de clases con herencia simple de la asignatura Desarrollo Orientado a Objetos I. Se trata de un sistema orientado a objetos desarrollado en Java, cuyo objetivo es cargar desde un archivo los centros de cultivo con su nombre, comuna y toneladas producidas, para luego identificar los de mayor producción. Además de implementar una jerarquía de clases.
-🧱 Estructura general del proyecto 📁 src/ ├── ui/ # Clase principal con el método main ├── model/ # Clases de dominio (Centros de cultivo, Unidad operativa) ├── data/ # Gestor de datos, Gestor unidades ├── resources/ # Archivo texto .txt
+Duoc UC Actividad Formativa 5: Aplicación de sobreescritura y polimorfismo en jerarquías
+👤 Autor del proyecto Nombre completo: [Andrea Angélica Mena Aedo] Sección: [002A] Carrera: ANALISTA PROGRAMADOR COMPUTACIONAL Sede: [Online] 📘 Descripción general del sistema Este proyecto corresponde a la Actividad Formativa 5: Aplicación de sobreescritura y polimorfismo en jerarquías de la asignatura Desarrollo Orientado a Objetos I. Se trata de un sistema orientado a objetos desarrollado en Java, cuyo objetivo es cargar desde un archivo los centros de cultivo con su nombre, comuna y toneladas producidas, para luego identificar los de mayor producción. Además de implementar una jerarquía de clases e integrar nuevas subclases.
+🧱 Estructura general del proyecto 📁 src/ ├── ui/ # Clase principal con el método main ├── model/ # Clases de dominio (Centros de cultivo, Unidad operativa, PlantaProceso) ├── data/ # Gestor de datos, Gestor unidades ├── resources/ # Archivo texto .txt
 
 https://github.com/andreamaedo/SalmonttApp2.git
 
-Fecha de entrega: [01/12/2025]
+Fecha de entrega: [08/12/2025]
 
 © Duoc UC | Escuela de Informática y Telecomunicaciones |
