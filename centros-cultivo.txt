@@ -1,3 +1,6 @@
 Aysén Principal;Puerto Aysén;2500
 Isla Dawson;Punta Arenas;1800
 Melinka Oeste; Guaitecas;3100
+Planta Chiloe Sur; Ancud; 10000
+Planta Quellón Norte; Quellón; 15000
+Planta Puerto Montt; Puerto Montt; 8500
