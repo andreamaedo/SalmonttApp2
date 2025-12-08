@@ -2,13 +2,11 @@ package ui;
 
 import data.GestorUnidades;
 import model.UnidadOperativa;
-import model.CentroDeCultivo;
-import model.PlantaProceso;
-
 import java.util.List;
 
 /**
  * Clase principal que ejecuta el programa y muestra los resultados de la jerarquía de clases.
+ * Ahora aplica Polimorfismo y Colecciones Genéricas.
  */
 public class Main {
 
@@ -20,52 +18,35 @@ public class Main {
 
         // 1. Crear instancias de prueba utilizando GestorUnidades
         GestorUnidades gestor = new GestorUnidades();
-        List<UnidadOperativa> unidades = gestor.crearUnidadesDePrueba();
+        // Colección Genérica (List) de la superclase (UnidadOperativa)
+        List<UnidadOperativa> unidades = gestor.obtenerColeccionUnidades(); // <-- Llama al método ajustado
 
         if (unidades.isEmpty()) {
             System.out.println("No se crearon unidades operativas para mostrar.");
             return;
         }
 
-        // 2. Mostrar los objetos creados por consola usando toString()
-        System.out.println("\n--- JERARQUÍA DE UNIDADES OPERATIVAS CREADAS (" + unidades.size() + " en total) ---");
+        // 2. Mostrar los objetos creados por consola usando Polimorfismo (Paso 3)
+        System.out.println("\n--- DETALLE DE UNIDADES OPERATIVAS (APLICANDO POLIMORFISMO) ---");
+        imprimirEncabezado();
 
-        // Impresión de Centros de Cultivo
-        System.out.println("\nCENTROS DE CULTIVO (Subclase: Producción)");
-        imprimirEncabezadoCentroCultivo();
-
+        // Recorre la colección usando la referencia de la Superclase
         for (UnidadOperativa unidad : unidades) {
-            if (unidad instanceof CentroDeCultivo) {
-                // Se utiliza el toString() sobrescrito de CentroCultivo
-                System.out.println(unidad.toString());
-            }
+            // Llama al método mostrarInformacion(). El método ejecutado (de CentroCultivo o PlantaProceso)
+            // se determina automáticamente en tiempo de ejecución.
+            unidad.mostrarInformacion();
         }
-        System.out.println("----------------------------------------------------------------------");
 
-        // Impresión de Plantas de Proceso
-        System.out.println("\nPLANTAS DE PROCESO (Subclase: Capacidad)");
-        imprimirEncabezadoPlantaProceso();
-
-        for (UnidadOperativa unidad : unidades) {
-            if (unidad instanceof PlantaProceso) {
-                // Se utiliza el toString() sobrescrito de PlantaProceso
-                System.out.println(unidad.toString());
-            }
-        }
         System.out.println("----------------------------------------------------------------------");
 
         System.out.println("\nFIN DEL PROCESO. La jerarquía de clases fue implementada y probada con éxito.");
     }
 
-    private static void imprimirEncabezadoCentroCultivo() {
+    private static void imprimirEncabezado() {
         System.out.println("----------------------------------------------------------------------");
-        System.out.println("| Nombre del Centro               | Comuna          | Producción (tons) |");
+        System.out.println("| Nombre de la Unidad             | Comuna          | Detalle (tons)    |");
         System.out.println("----------------------------------------------------------------------");
     }
 
-    private static void imprimirEncabezadoPlantaProceso() {
-        System.out.println("----------------------------------------------------------------------");
-        System.out.println("| Nombre de la Planta             | Comuna          | Capacidad (tons)  |");
-        System.out.println("----------------------------------------------------------------------");
-    }
+
 }
