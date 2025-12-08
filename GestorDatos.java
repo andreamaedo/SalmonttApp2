@@ -36,7 +36,7 @@ public class GestorDatos {
                     try {
                         String nombre = datos[0].trim();
                         String comuna = datos[1].trim();
-                        // Intentar convertir la producción a entero
+                        // Intenta convertir la producción a entero
                         int toneladas = Integer.parseInt(datos[2].trim());
 
                         // Usa el constructor de CentroDeCultivo
