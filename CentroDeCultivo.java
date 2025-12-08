@@ -15,7 +15,6 @@ public class CentroDeCultivo extends UnidadOperativa { // <-- Herencia estableci
      * Constructor del CentroDeCultivo.
      */
     public CentroDeCultivo(String nombre, String comuna, int toneladasProducidas) {
-        // La llamada a super DEBE ser la primera línea.
         super(nombre, comuna);
 
         // Validación específica
@@ -28,11 +27,10 @@ public class CentroDeCultivo extends UnidadOperativa { // <-- Herencia estableci
 
 
     /**
-     * Retorna una representación legible del objeto.
+     * Retorna una representación legible del objeto (Implementación polimórfica).
      */
     @Override
-    public String toString() {
-        // Accede a 'nombre' y 'comuna' gracias al 'protected' en la superclase
-        return String.format("| %-30s | %-15s | %,15d tons |", nombre, comuna, toneladasProducidas);
+    public void mostrarInformacion() {
+        System.out.printf("| %-30s | %-15s | %,15d tons |\n", nombre, comuna, toneladasProducidas);
     }
 }
