@@ -2,18 +2,15 @@ package model;
 
 /**
  * Clase que representa una Planta de Proceso de salmón.
- * Hereda de UnidadOperativa.
+ * Hereda de UnidadOperativa e implementa Registrable.
  */
-public class PlantaProceso extends UnidadOperativa {
-    private int capacidadProceso; // Atributo específico
+public class PlantaProceso extends UnidadOperativa implements Registrable {
+    private int capacidadProceso;
 
     public int getCapacidadProceso() {
         return capacidadProceso;
     }
 
-    /**
-     * Constructor de PlantaProceso.
-     */
     public PlantaProceso(String nombre, String comuna, int capacidadProceso) {
         super(nombre, comuna);
 
@@ -24,11 +21,20 @@ public class PlantaProceso extends UnidadOperativa {
         this.capacidadProceso = capacidadProceso;
     }
 
-    /**
-     * Retorna una representación legible del objeto (Implementación polimórfica).
-     */
+    // Implementación de la Interfaz Registrable
+    @Override
+    public void registrar() {
+        System.out.println("[REGISTRO] Planta de Proceso '" + nombre + "' registrada.");
+    }
+
+    @Override
+    public void mostrarResumen() {
+        System.out.println("Resumen de Planta: " + nombre + " en " + comuna + ". Capacidad: " + capacidadProceso + " tons.");
+    }
+
+    // Implementación polimórfica de UnidadOperativa
     @Override
     public void mostrarInformacion() {
-        System.out.printf("| %-30s | %-15s | %,15d tons |\n", nombre, comuna, capacidadProceso);
+        System.out.printf("| %-30s | %-15s | %,15d tons (Proceso) |\n", nombre, comuna, capacidadProceso);
     }
 }
