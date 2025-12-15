@@ -1,12 +1,12 @@
 package ui;
 
 import data.GestorUnidades;
+import data.GestorEntidades;
 import model.UnidadOperativa;
 import java.util.List;
 
 /**
  * Clase principal que ejecuta el programa y muestra los resultados de la jerarquía de clases.
- * Ahora aplica Polimorfismo y Colecciones Genéricas.
  */
 public class Main {
 
@@ -16,28 +16,27 @@ public class Main {
         System.out.println("        SISTEMA DE GESTIÓN SALMONTT (v3.0)        ");
         System.out.println("==================================================");
 
-        // 1. Crear instancias de prueba utilizando GestorUnidades
-        GestorUnidades gestor = new GestorUnidades();
-        // Colección Genérica (List) de la superclase (UnidadOperativa)
-        List<UnidadOperativa> unidades = gestor.obtenerColeccionUnidades(); // <-- Llama al método ajustado
+        // 1. Mostrar Colección de Unidades Operativas (Herencia/Polimorfismo)
 
-        if (unidades.isEmpty()) {
-            System.out.println("No se crearon unidades operativas para mostrar.");
-            return;
+        GestorUnidades gestorUnidades = new GestorUnidades();
+
+        List<UnidadOperativa> unidades = gestorUnidades.obtenerColeccionUnidades();
+
+        if (!unidades.isEmpty()) {
+
+            // 2. Mostrar los objetos creados usando Polimorfismo
+            System.out.println("\n--- DETALLE DE UNIDADES OPERATIVAS (POLIMORFISMO EN ACCIÓN) ---");
+            imprimirEncabezado();
+
+            // Recorre la colección usando la referencia de la Superclase
+            for (UnidadOperativa unidad : unidades) {
+                unidad.mostrarInformacion();
+            }
+            System.out.println("----------------------------------------------------------------------");
         }
 
-        // 2. Mostrar los objetos creados por consola usando Polimorfismo (Paso 3)
-        System.out.println("\n--- DETALLE DE UNIDADES OPERATIVAS (APLICANDO POLIMORFISMO) ---");
-        imprimirEncabezado();
-
-        // Recorre la colección usando la referencia de la Superclase
-        for (UnidadOperativa unidad : unidades) {
-            // Llama al método mostrarInformacion(). El método ejecutado (de CentroCultivo o PlantaProceso)
-            // se determina automáticamente en tiempo de ejecución.
-            unidad.mostrarInformacion();
-        }
-
-        System.out.println("----------------------------------------------------------------------");
+        // 3. Demostración de Interfaz Registrable e Instanceof
+        GestorEntidades.demostrarPolimorfismoRegistrable();
 
         System.out.println("\nFIN DEL PROCESO. La jerarquía de clases fue implementada y probada con éxito.");
     }
@@ -47,6 +46,4 @@ public class Main {
         System.out.println("| Nombre de la Unidad             | Comuna          | Detalle (tons)    |");
         System.out.println("----------------------------------------------------------------------");
     }
-
-
 }
