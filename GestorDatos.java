@@ -16,7 +16,6 @@ public class GestorDatos {
 
     /**
      * Lee y parsea los Centros de Cultivo desde el archivo.
-     * Incluye manejo de errores para formato y lectura.
      * @return Una lista de objetos CentroDeCultivo válidos.
      */
     public List<CentroDeCultivo> leerCentrosDeCultivo() {
@@ -36,10 +35,8 @@ public class GestorDatos {
                     try {
                         String nombre = datos[0].trim();
                         String comuna = datos[1].trim();
-                        // Intenta convertir la producción a entero
                         int toneladas = Integer.parseInt(datos[2].trim());
 
-                        // Usa el constructor de CentroDeCultivo
                         CentroDeCultivo centro = new CentroDeCultivo(nombre, comuna, toneladas);
                         centros.add(centro);
                     } catch (NumberFormatException e) {
